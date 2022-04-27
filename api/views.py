@@ -6,9 +6,9 @@ from django_filters.rest_framework import DjangoFilterBackend
 
 
 class Ip2AsnViewSet(viewsets.ModelViewSet):
-    # TODO: distinc query fields
+
     http_method_names = ['get']
-    queryset = Ip2Asn.objects.all()
+    queryset = Ip2Asn.objects.values('as_number','as_description','country_code').distinct()
     serializer_class = Ip2AsnSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['id', 'as_number']
