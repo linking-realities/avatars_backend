@@ -135,6 +135,7 @@ class Ip2Country(models.Model):
     range_start = models.TextField(blank=True, null=True)
     range_end = models.TextField(blank=True, null=True)
     country_code = models.TextField(blank=True, null=True)
+    id = models.IntegerField(primary_key=True, null=False, blank=False)
 
     class Meta:
         managed = False

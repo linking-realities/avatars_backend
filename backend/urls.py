@@ -20,4 +20,6 @@ from api import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('Ip2Asn/', views.Ip2AsnViewSet.as_view({'get':'list'})),
+    path('Ip2Country/', views.Ip2CountryViewSet.as_view({'get':'list'})),
+
 ]
